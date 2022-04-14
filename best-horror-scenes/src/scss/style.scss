@@ -1,0 +1,115 @@
+@import "_reset";
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: $white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+aside {
+  position: fixed;
+  width: $sidebarWidth;
+  height: 100vh;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: $asideGap;
+  padding: 5% 7%;
+
+  color: $fontRed;
+
+  h1 {
+    font-size: $titleFontSize;
+  }
+  h1 ~ * {
+    line-height: 120%;
+  }
+  h2 {
+    margin-top: 40px;
+    font-size: 25px;
+  }
+  .aside__description {
+    line-height: 120%;
+    font-size: $paragraphFontSize;
+    font-weight: 500;
+    text-align: justify;
+  }
+  nav, .aside__footer {
+    color: $dim-black;
+  }
+  nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    li {
+      list-style: none;
+      border-bottom: 1px solid $dim-black;
+      padding-bottom: 5px;
+      transition: 0.3s all linear;
+      &:hover {
+        cursor: pointer;
+        color: black;
+      }
+    }
+  }
+  .aside__footer {
+    font-size: 8px;
+  }
+}
+
+main {
+  height: 3000vh;
+  margin-left: $sidebarWidth;
+  .movie {
+    background: linear-gradient(
+      rgba(0,0,0, 0.1) 5%,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    )
+    $red;
+    padding: 10% 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    color: $white;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .movie__header {
+      display: flex;
+      gap: 14px;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      h4 {
+        font-size: $titleFontSize;
+        font-weight: bold;
+      }
+      h5 {
+        font-size: 16px;
+      }
+    }
+    img {
+      margin-bottom: 48px;
+    }
+    p {
+      line-height: 140%;
+      text-indent: 20px;
+      font-size: $paragraphFontSize;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+}
