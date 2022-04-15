@@ -6,7 +6,7 @@
 
 ---
 
-[x] https://besthorrorscenes.com/ : [보러가기](https://vangona.github.io/scss__clone-coding/best-horror-scenes/build/index.html)
+[x] https://besthorrorscenes.com/ : [보러가기](https://vangona.github.io/scss__clone-coding/best-horror-scenes/build/index.html)  
 [] https://paint-box.com/  
 [] http://10x19.co/  
 [] http://www.z-o-o.fr/  
