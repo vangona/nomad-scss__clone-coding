@@ -1,8 +1,11 @@
 @import "_reset";
 @import "_variables";
 
+// 전역 공유 스타일
+
 * {
   box-sizing: border-box;
+  letter-spacing: 2px;
 }
 
 body {
@@ -11,48 +14,87 @@ body {
   gap: 40px;
 }
 
+p {
+  font-family: $basicParagraphFont, serif;
+  font-size: $descriptionFontSize;
+  color: $basicParagraphFontColor;
+  text-align: center;
+  margin-bottom: 65px;
+  letter-spacing: 3px;
+  line-height: 120%;
+  padding: 10px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.dim {
+  opacity: 0.7;
+}
+
+.column {
+  flex-direction: column;
+}
+
+// navigation header 스타일
 .nav__header {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: $headerSize;    
+
   text-transform: uppercase;
   font-size: $basicFontSize;
-  margin: 0 50px;
+  padding: 0 50px;
+
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 144px;    
 
     ul {
       display: flex;
       justify-content: space-between;
-      gap: 10px;
+      gap: 20px;
 
       li:hover {
+        cursor: pointer;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 50px;
+      &:hover {
         cursor: pointer;
       }
     }
   }
 }
 
+.section__first {
+  margin-top: $headerSize;
+}
+
+// section 공통 스타일
 section {
   margin: 0 50px 40px 50px;
 
   h4 {
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-size: $basicFontSize;
     margin-bottom: 20px;
   }
 
-  p {
-    font-family: "Times New Roman", serif;
-    font-size: $descriptionFontSize;
-    text-align: center;
-    margin-bottom: 65px;
-  }
-
   a {
     font-size: $basicFontSize;
-    border: 1px solid black;
+    border: $basicBorder;
     padding: 20px 50px;
     text-transform: uppercase;
     text-decoration: none;
@@ -60,15 +102,24 @@ section {
     transition: 0.1s all linear;
 
     &:hover {
-      cursor: pointer;
       background-color: $btnHoverBgColor;
       color: $btnHoverTextColor;
     }
   }
 }
 
+// half-image section 스타일
 .post__half-image {
   display: flex;
+  background-color: $ivory;
+
+  &.bg__blue {
+    background-color: $skyblue;
+  }
+  
+  &.bg__apricot {
+    background-color: $apricot;
+  }
 
   img {
     width: 50%;
@@ -80,19 +131,11 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $ivory;
     padding: 30px;
   }
-
-  .bg__blue {
-    background-color: $skyblue;
-  }
 }
 
-.column {
-  flex-direction: column;
-}
-
+// 상품 게시물 스타일
 .post__item {
   display: flex;
 
@@ -170,18 +213,168 @@ section {
   }
 }
 
+// blog 게시물 스타일 (grid)
 .blog {
   display: grid;
+  max-width: 100%;
+  background-color: $darkenIvory;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3);
 
   .blog__post {
-    display: flex;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    
+    &:nth-child(even) {
+      img {
+        order: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog__description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 50px;
+      height: 100%;
+
+      h4 {
+        font-family: $basicParagraphFont;
+      }
+
+      p {
+        margin: 0;
+        line-height: 140%;
+      }
+
+      a {
+        display: flex;
+        font-family: Helvetica;
+        border: none;
+        gap: 20px;
+
+        &:hover {
+          background-color: inherit;
+          color: inherit;
+
+          i {
+            transition: 0.3s all linear;
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// email 입력창 스타일
+.post__email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  p {
+    padding: 20px 15%;
   }
 
-  img {
-    width: 50%;
-    height: auto;
-    object-fit: cover;
+  .email__form {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: $basicBorder;
+    font-family: $basicParagraphFont;
+    width: 80%;
+    
+    input {
+      font-family: inherit;
+      font-size: 40px;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      border: $basicBorder;
+      transition: 0.3s all linear;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $btnHoverBgColor;
+        color: $btnHoverTextColor;
+      }
+    }
+  }
+}
+
+// grid 게시물
+.post__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  max-width: 100%;
+
+  a {
+    all: initial;
+    transition: 0.2s all linear;
+
+    &:hover {
+      background-color: transparent;
+      opacity: 0.7;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-transform: uppercase;
+  font-size: $basicFontSize;
+  background-color: $footerColor;
+  padding: 70px 70px;
+
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border-right: $basicBorder;
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
   }
 }
