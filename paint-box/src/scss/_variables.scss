@@ -1,4 +1,6 @@
 // color
+@import './responsive';
+
 $ivory: #fbf7f6;
 $footerColor: #f2ede7;
 $darkenIvory: #f0ede8;
@@ -12,7 +14,7 @@ $basicParagraphFont: "Times New Roman";
 
 // font size
 $basicFontSize: 10px;
-$descriptionFontSize: 30px;
+$descriptionFontSize: 2rem;
 
 // font color
 $basicParagraphFontColor: rgba(0,0,0,0.6);
@@ -21,4 +23,37 @@ $basicParagraphFontColor: rgba(0,0,0,0.6);
 $basicBorder: 1px solid black;
 
 // size
-$headerSize: 144px;  ;
+$headerSize: 144px;
+
+// animation
+$navHeaderAnimation: 0.3s all linear;
+
+// 반응형
+// breakpoint별로 변수를 변경해주면, 적용되지 않는다.
+// class로 선언해주면 해결할 수 있다.
+@include mobile {
+  %headerSidePadding {
+    padding: 0 20px;
+  } 
+  %mainSidePadding {
+    padding: 0 0px;
+  } 
+}
+
+@include tablet {
+  %headerSidePadding {
+    padding: 0 50px;
+  }
+  %mainSidePadding {
+    padding: 0 50px;
+  }
+}
+
+@include desktop {
+  %headerSidePadding {
+    padding: 0 144px;
+  }
+  %mainSidePadding {
+    padding: 0 144px;
+  }
+}

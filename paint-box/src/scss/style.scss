@@ -1,5 +1,6 @@
 @import "_reset";
 @import "_variables";
+@import "_responsive";
 
 // 전역 공유 스타일
 
@@ -43,11 +44,21 @@ a:hover {
   position: fixed;
   background-color: white;
   width: 100%;
-  height: $headerSize;    
+  height: $headerSize;  
+  transition: $navHeaderAnimation;  
+  z-index: 9;
 
   text-transform: uppercase;
   font-size: $basicFontSize;
-  padding: 0 50px;
+  @extend %headerSidePadding;
+
+  @include mobile {
+    height: 50px;
+  }
+
+  &.scroll-event {
+    height: 50px;
+  }
 
   nav {
     display: flex;
@@ -70,20 +81,40 @@ a:hover {
       left: 50%;
       transform: translateX(-50%);
       height: 50px;
+      transition: $navHeaderAnimation;
+
       &:hover {
         cursor: pointer;
       }
     }
+
+    @include mobile {
+      ul:first-child {
+        font-size: 15px;
+      }
+      img {
+        height: 25px;
+      }
+    }
+  }
+
+  &.scroll-event img {
+    height: 25px;
   }
 }
 
-.section__first {
+main {
   margin-top: $headerSize;
+  @extend %mainSidePadding;
+
+  @include mobile {
+    margin-top: 50px;
+  }
 }
 
 // section 공통 스타일
 section {
-  margin: 0 50px 40px 50px;
+  margin-bottom: 80px;
 
   h4 {
     letter-spacing: 2px;
@@ -111,7 +142,13 @@ section {
 // half-image section 스타일
 .post__half-image {
   display: flex;
+  flex-direction: column;
   background-color: $ivory;
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
   &.bg__blue {
     background-color: $skyblue;
@@ -122,7 +159,7 @@ section {
   }
 
   img {
-    width: 50%;
+    width: 100%;
     height: auto;
   }
 
@@ -131,7 +168,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 50px;
   }
 }
 
@@ -161,6 +198,12 @@ section {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+
+      @include mobile {
+        &:not(:first-child) {
+          display: none;
+        }
+      }
 
       .img__container {
         display: flex;
@@ -215,20 +258,30 @@ section {
 
 // blog 게시물 스타일 (grid)
 .blog {
-  display: grid;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: $darkenIvory;
-  grid-template-columns: 1fr;
+
+  @include desktop {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
 
   .blog__post {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    
-    &:nth-child(even) {
-      img {
-        order: 1;
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      &:nth-child(even) {
+        img {
+          order: 1;
+        }
       }
     }
 
@@ -243,8 +296,8 @@ section {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 20px;
-      padding: 20px 50px;
+      gap: 10px;
+      padding: 50px 50px;
       height: 100%;
 
       h4 {
@@ -298,8 +351,9 @@ section {
     
     input {
       font-family: inherit;
-      font-size: 40px;
+      font-size: $descriptionFontSize;
       border: none;
+      width: calc(80% - 50px);
 
       &:focus {
         outline: none;
@@ -334,6 +388,7 @@ section {
     transition: 0.2s all linear;
 
     &:hover {
+      cursor: pointer;
       background-color: transparent;
       opacity: 0.7;
     }
@@ -342,6 +397,11 @@ section {
       width: 100%;
       height: 100%;
     }
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
   }
 }
 
@@ -376,5 +436,17 @@ footer {
   a {
     color: black;
     text-decoration: none;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .footer__column {
+      border-right: none;
+      padding-bottom: 30px;
+      border-bottom: $basicBorder;  
+    }
   }
 }

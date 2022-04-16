@@ -4,6 +4,9 @@ import autoPrefixer from "gulp-autoprefixer";
 import miniCSS from "gulp-csso";
 import image from "gulp-image";
 import ws from "gulp-webserver";
+import bro from "gulp-bro";
+import uglifyify from "uglifyify";
+import babelify from "babelify";
 
 const sass = require("gulp-sass")(require("node-sass"));
 
@@ -44,6 +47,19 @@ const styles = () =>
     .pipe(miniCSS())
     .pipe(gulp.dest(routes.scss.dest));
 
+const js = () => 
+  gulp
+    .src(routes.js.src)
+    .pipe(
+      bro({
+        transform: [
+          babelify.configure({ presets: ["@babel/preset-env"] }),
+          ["uglifyify", { global: true }]
+        ]
+      })
+    )
+    .pipe(gulp.dest(routes.js.dest));
+
 const webserver = () =>
   gulp
     .src("build")
@@ -52,11 +68,12 @@ const webserver = () =>
 const watch = () => {
   gulp.watch(routes.html.watch, html);
   gulp.watch(routes.scss.watch, styles);
+  gulp.watch(routes.js.watch, js);
 }
 
 const prepare = gulp.series([clean]);
 
-const assets = gulp.series([html, styles]);
+const assets = gulp.series([html, styles, js]);
 
 const live = gulp.parallel([webserver, watch]);
 
