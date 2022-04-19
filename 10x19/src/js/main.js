@@ -23,7 +23,7 @@ function preload() {
   const sources = [];
   for (let i = 1; i <= PAGES; i++) {
     for (let j = 1; j <= IMG_NUMBERS_FOR_PAGE; j++) {
-      sources.push(`/img/${i}/${j}.jpg`);
+      sources.push(`https://cdn.jsdelivr.net/gh/vangona/scss__clone-coding/10x19/build/img/${i}/${j}.jpg`);
     }
   }
   
