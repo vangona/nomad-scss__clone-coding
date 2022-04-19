@@ -1,20 +1,23 @@
-$bg-color: navy;
+$mainColor: brown;
 @import "_responsive";
 
+$imgSize: calc(80vh + 5px);
+$sideWidth: calc(50vw - 40vh - 2.5px);
+$rowHeight: 10vh;
+
+$centerRowPosition: calc(10vh + 1px);
+$bottomRowPosition: calc(90vh + 6px);
+
 @include desktop {
-  %responsiveGridColumn {
-    grid-template-columns: repeat(3, 1fr);
+  %menuWidth {
+    width: calc();
   }
 }
 
 @include tablet {
-  %responsiveGridColumn {
-    grid-template-columns: 1fr 5fr 1fr;
-  }
+
 }
 
 @include mobile {
-  %responsiveGridColumn {
-    grid-template-columns: 1fr 3fr 1fr;
-  }
+
 }

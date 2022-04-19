@@ -9,44 +9,51 @@
   </head>
   <body>
     <main>
-      <div class="column__number">
-        <span></span>
-        <div class="number">#10</div>
-        <div class="number">#9</div>
-        <div class="number">#8</div>
-        <div class="number">#7</div>
-        <div class="number">#6</div>
-        <span></span>
-      </div>
-      <div class="column__center">
-        <div class="center__row"></div>
-        <div class="center__image">
-          <img
-            src="https://images.unsplash.com/photo-1650208312823-4a676f114aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"
-          />
-          <img src="img/1.jpg" />
-          <img
-            src="https://images.unsplash.com/photo-1650208312823-4a676f114aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1650208312823-4a676f114aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1650208312823-4a676f114aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"
-          />
+      <!-- 좌측 열 -->
+      <div class="home__column home__column-left column">
+        <div class="home__row-top row"></div>
+        <div class="home__row-center row">
+          <div class="number" data-id="10">#10</div>
+          <div class="number" data-id="9">#9</div>
+          <div class="number" data-id="8">#8</div>
+          <div class="number" data-id="7">#7</div>
+          <div class="number" data-id="6">#6</div>
         </div>
-        <div class="center__row">
-          <span>long text</span>
+        <div class="home__row-bottom row"></div>
+      </div>
+
+      <!-- 중앙 열 -->
+      <div class="home__column home__column-center column">
+        <div class="home__row-top row">
+          <h1>Memories</h1>
+        </div>
+        <div class="home__row-image row">
+          <div class="center__image">
+            <img src="img/10/1.jpg" alt="" />
+          </div>
+        </div>
+        <div class="home__row-bottom row">
+          <span class="home__description"
+            >새는 알에서 나오려면 투쟁해야한다. 알은 세계이다. 태어나려는 자는
+            한 세계를 무너뜨려야만 한다. 알에서 나온 새는 신에게 날아간다. 신의
+            이름은 아브락사스.</span
+          >
         </div>
       </div>
-      <div class="column__number">
-        <div class="menu">menu</div>
-        <div class="number">#5</div>
-        <div class="number">#4</div>
-        <div class="number">#3</div>
-        <div class="number">#2</div>
-        <div class="number">#1</div>
-        <span></span>
+
+      <!-- 우측 열 -->
+      <div class="home__column home__column-right column">
+        <div class="home__row-top row home__menu row">
+          <span class="menu">menu</span>
+        </div>
+        <div class="home__row-center row">
+          <div class="number" data-id="5">#5</div>
+          <div class="number" data-id="4">#4</div>
+          <div class="number" data-id="3">#3</div>
+          <div class="number" data-id="2">#2</div>
+          <div class="number" data-id="1">#1</div>
+        </div>
+        <div class="home__row-bottom row"></div>
       </div>
     </main>
 
