@@ -12,7 +12,7 @@ init();
 function init () {
   preload();
 
-  if (!isMobile()) {
+  if (isMobile()) {
     addNumberClickEvents();
   } else {
     addNumberHoverEvents();
