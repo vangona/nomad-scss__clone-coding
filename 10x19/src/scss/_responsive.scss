@@ -1,31 +1,21 @@
 // breakpoints
-$mobile: 767px; 
-$tablet: 1023px; 
-$desktop: 1024px; 
+$mobile: 799px; 
+$desktop: 800px; 
 
 // responsive mixin
 @mixin mobile { 
   @media (max-width: $mobile) { 
     :root {
-      font-size: 12px;
+      font-size: 14px;
     }
     @content; 
   } 
 }
 
-@mixin tablet { 
-  @media (min-width: $mobile) and (max-width: $tablet) { 
-    :root {
-      font-size: 14px;
-    }
-    @content; 
-  } 
-} 
-
 @mixin desktop { 
   @media (min-width: $desktop) {  
     :root {
-      font-size: 16px;
+      font-size: 20px;
     }   
     @content; 
   } 

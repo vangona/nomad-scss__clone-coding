@@ -9,7 +9,7 @@
 body {
   color: $mainColor;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 main {
@@ -36,7 +36,6 @@ main {
 
 .number, .home__menu {
   background-color: white;
-  transition: 0.2s all linear;
 
   &:hover {
     cursor: pointer;
@@ -66,6 +65,10 @@ main {
 
 .home__column-left, .home__column-right {
   width: $sideWidth;
+
+  .number {
+    min-width: 30px;
+  }
 }
 
 .home__column-left {
@@ -100,7 +103,7 @@ main {
 }
 
 .home__row-top, .home__row-bottom {
-  height: 10vh;
+  height: $rowHeight;
 }
 
 .home__row-bottom {
@@ -116,7 +119,7 @@ main {
   width: $sideWidth;
   position: absolute;
   display: grid;
-  grid-template-rows: repeat(5, 16vh);
+  grid-template-rows: repeat(5, $gridHeight);
   gap: 1px;
 }
 

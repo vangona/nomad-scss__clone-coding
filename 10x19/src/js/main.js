@@ -11,8 +11,12 @@ init();
 
 function init () {
   preload();
-  addNumberHoverEvents();
-  addNumberClickEvents();
+
+  if (!isMobile()) {
+    addNumberClickEvents();
+  } else {
+    addNumberHoverEvents();
+  }
 }
 
 function preload() {
@@ -36,6 +40,12 @@ function addNumberHoverEvents() {
 
 function addNumberClickEvents() {
   for (let i = 0; i < NUMBER_DIVS.length; i++) {
-    NUMBER_DIVS[i].addEventListener('click', clickNumberEvent);
+    NUMBER_DIVS[i].addEventListener('click', e => {
+      hoverNumberEvent(e, images)
+    });
   }
+}
+
+function isMobile(){
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }

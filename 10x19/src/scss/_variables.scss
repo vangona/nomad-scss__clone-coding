@@ -1,21 +1,18 @@
 $mainColor: brown;
 @import "_responsive";
 
-$imgSize: calc(80vh + 5px);
-$sideWidth: calc(50vw - 40vh - 2.5px);
-$rowHeight: 10vh;
+$imgSize: calc(80vmin + 5px);
+$sideWidth: calc(50vw - 40vmin - 2.5px);
+$rowHeight: calc(50vh - 40vmin - 3.5px);
+$gridHeight: calc(16vmin);
 
-$centerRowPosition: calc(10vh + 1px);
-$bottomRowPosition: calc(90vh + 6px);
+$centerRowPosition: calc(50vh - 40vmin - 1.5px);
+$bottomRowPosition: calc(50vh + 40vmin + 3.5px);
 
 @include desktop {
   %menuWidth {
     width: calc();
   }
-}
-
-@include tablet {
-
 }
 
 @include mobile {
