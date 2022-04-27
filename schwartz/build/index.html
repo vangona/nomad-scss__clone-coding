@@ -6,15 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Schwartz Media</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
-      <nav>
-        <div>
-          <span>Schwartz</span>
-          <span>Media</span>
-        </div>
-        <div class="menu-content">
+      <input id="input__menu-toggle" type="checkbox" />
+      <div class="header__title">
+        <label for="input__menu-toggle" class="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <span>Schwartz</span>
+        <span>Media</span>
+      </div>
+      <div class="window-dimmer"></div>
+      <nav class="menu-content">
+        <div class="menu__container">
           <h5>Schwartz Media</h5>
           <ul>
             <li>Journalism</li>
@@ -33,9 +45,15 @@
     </header>
     <main>
       <div class="hero">
-        <img src="https://source.unsplash.com/random/450x461" alt="" />
-        <h4>News that lasts.</h4>
+        <div class="hero__img"></div>
+        <div class="hero__title">
+          <h4>News that lasts.</h4>
+          <a href="#article__start">
+            <i class="fa-solid fa-arrow-down-long"></i>
+          </a>
+        </div>
       </div>
+      <a id="article__start"></a>
       <article class="article__main">
         <p>
           <span>About</span>
@@ -49,21 +67,31 @@
           Paper, The Monthly magazine and the daily podcast 7am, alongside our
           sister publications, Quarterly Essay and Australian Foreign Affairs.
         </p>
-        <a>View our Companies</a>
+        <a
+          ><i class="fa-solid fa-circle-arrow-right"></i>
+          View our Companies
+        </a>
       </article>
       <section class="section__article">
         <article class="article-journalism">
-          <img src="https://source.unsplash.com/random/450x451" alt="" />
+          <div class="img-wrapper">
+            <img src="https://source.unsplash.com/random/450x451" alt="" />
+          </div>
           <div class="description">
             <h4>Journalism</h4>
-            <p></p>
+            <p>
+              Our journalists create in-depth, independent, original public
+              interest reporting, focusing on storytelling and insight.
+            </p>
             <div class="buttons">
-              <button>Learn more</button>
+              <button class="action-btn">Learn more</button>
             </div>
           </div>
         </article>
         <article class="article-the-monthly">
-          <img src="https://source.unsplash.com/random/450x452" alt="" />
+          <div class="img-wrapper">
+            <img src="https://source.unsplash.com/random/450x452" alt="" />
+          </div>
           <div class="description">
             <h4>The Monthly</h4>
             <p>
@@ -72,13 +100,15 @@
               culture and ideas.
             </p>
             <div class="buttons">
-              <button>Learn more</button>
-              <button>Advertise</button>
+              <button class="action-btn">Learn more</button>
+              <button class="action-btn">Advertise</button>
             </div>
           </div>
         </article>
         <article class="article-the-saturday-paper">
-          <img src="https://source.unsplash.com/random/450x453" alt="" />
+          <div class="img-wrapper">
+            <img src="https://source.unsplash.com/random/450x453" alt="" />
+          </div>
           <div class="description">
             <h4>The Saturday Paper</h4>
             <p>
@@ -87,13 +117,15 @@
               stories.
             </p>
             <div class="buttons">
-              <button>Learn more</button>
-              <button>Advertise</button>
+              <button class="action-btn">Learn more</button>
+              <button class="action-btn">Advertise</button>
             </div>
           </div>
         </article>
         <article class="article-7am">
-          <img src="https://source.unsplash.com/random/450x454" alt="" />
+          <div class="img-wrapper">
+            <img src="https://source.unsplash.com/random/450x454" alt="" />
+          </div>
           <div class="description">
             <h4>7am</h4>
             <p>
@@ -101,37 +133,42 @@
               in-depth interviews and sharp analysis.
             </p>
             <div class="buttons">
-              <button>Learn more</button>
-              <button>Advertise</button>
+              <button class="action-btn">Learn more</button>
+              <button class="action-btn">Advertise</button>
             </div>
           </div>
         </article>
         <div class="article--double">
           <article class="article-quarterly-essay">
             <h4>Quarterly Essay</h4>
-            <img src="https://source.unsplash.com/random/450x455" alt="" />
+            <div class="img-wrapper">
+              <img src="https://source.unsplash.com/random/450x455" alt="" />
+            </div>
             <div class="description">
               <p>
                 Quarterly Essay is the leading agenda-setting journal of
                 politics and culture in Australia.
               </p>
               <div class="buttons">
-                <button>Learn more</button>
-                <button>Advertise</button>
+                <button class="action-btn">Learn more</button>
+                <button class="action-btn">Advertise</button>
               </div>
             </div>
           </article>
           <article class="article-autralian-foreign-affairs">
             <h4>Australian Foreign Affairs</h4>
-            <img src="https://source.unsplash.com/random/450x456" alt="" />
+            <div class="img-wrapper">
+              <img src="https://source.unsplash.com/random/450x456" alt="" />
+            </div>
+
             <div class="description">
               <p>
                 Australian Foreign Affairs is the country’s leading foreign
                 affairs journal.
               </p>
               <div class="buttons">
-                <button>Learn more</button>
-                <button>Advertise</button>
+                <button class="action-btn">Learn more</button>
+                <button class="action-btn">Advertise</button>
               </div>
             </div>
           </article>
@@ -143,31 +180,37 @@
               Get in touch with our advertising team.
             </p>
             <div class="buttons">
-              <button>Learn more</button>
+              <button class="action-btn">Learn more</button>
             </div>
           </div>
         </article>
         <div class="article--double">
           <article class="article-shop">
             <h4>Shop</h4>
-            <img src="https://source.unsplash.com/random/450x457" alt="" />
+            <div class="img-wrapper">
+              <img src="https://source.unsplash.com/random/450x457" alt="" />
+            </div>
+
             <div class="description">
               <p>
                 In collaboration with Alpha60, The Saturday Paper and The
                 Monthly bring you a tote bag.
               </p>
               <div class="buttons">
-                <button>Shop now</button>
+                <button class="action-btn">Shop now</button>
               </div>
             </div>
           </article>
           <article class="article-give-a-gift">
             <h4>Give a Gift</h4>
-            <img src="https://source.unsplash.com/random/450x458" alt="" />
+            <div class="img-wrapper">
+              <img src="https://source.unsplash.com/random/450x458" alt="" />
+            </div>
+
             <div class="description">
               <p>Give The Saturday Paper or The Monthly as a gift.</p>
               <div class="buttons">
-                <button>Gift</button>
+                <button class="action-btn">Gift</button>
               </div>
             </div>
           </article>
@@ -178,7 +221,7 @@
               <h4>Careers</h4>
               <p>Work at the country’s leading independent publisher.</p>
               <div class="buttons">
-                <button>Learn more</button>
+                <button class="action-btn">Learn more</button>
               </div>
             </div>
           </article>
@@ -187,7 +230,7 @@
               <h4>News</h4>
               <p>Keep in touch with what is happening at Schwartz Media.</p>
               <div class="buttons">
-                <button>Learn more</button>
+                <button class="action-btn">Learn more</button>
               </div>
             </div>
           </article>
@@ -196,7 +239,7 @@
               <h4>Contact</h4>
               <p>Get in touch with our editorial and advertising teams.</p>
               <div class="buttons">
-                <button>Learn more</button>
+                <button class="action-btn">Learn more</button>
               </div>
             </div>
           </article>
@@ -204,26 +247,29 @@
       </section>
     </main>
     <footer>
-      <div class="footer__column">
-        <div class="footer__row">
-          <h4>Schwartz</h4>
-        </div>
-        <div class="footer__row">
-          <div class="links">
-            <a>Terms & Conditions</a> <a>Privacy Policy</a>
+      <div class="footer__main">
+        <div class="footer__column">
+          <div class="footer__row">
+            <h4>Schwartz</h4>
           </div>
-          <div class="copyright">
-            <a>&COPY; 2022Schwartz Publishing</a>
-            <span>All rights reserved</span>
+          <div class="footer__row">
+            <div class="links">
+              <a>Terms & Conditions</a> <a>Privacy Policy</a>
+            </div>
+            <div class="copyright">
+              <a>&COPY; 2022 Schwartz Publishing</a>
+              <span>All rights reserved</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="footer__column">
-        <h5>Schwartz Media</h5>
-      </div>
-      <div class="footer__column">
-        <h5>Schwartz Books</h5>
+        <div class="footer__column">
+          <h5>Schwartz Media</h5>
+        </div>
+        <div class="footer__column">
+          <h5>Schwartz Books</h5>
+        </div>
       </div>
     </footer>
+    <script src="./js/main.js"></script>
   </body>
 </html>
